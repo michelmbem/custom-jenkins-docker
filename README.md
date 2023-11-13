@@ -1,0 +1,1 @@
+# Dockerfile for the creation of a custom Jenkins image

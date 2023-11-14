@@ -19,7 +19,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update
 
 # Install all the required packages from ubuntu repository
-RUN apt install -y git openjdk-17-jdk-headless ant maven npm wget
+RUN apt install -y git openjdk-17-jdk-headless ant maven npm wget ssh-client
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt clean
 
@@ -35,7 +35,6 @@ VOLUME ["/home/jenkins"]
 USER jenkins
 
 # Set environment variables
-ENV JAVA_HOME /usr/lib/jvm/java-1.17.0-openjdk-amd64
 ENV JENKINS_HOME /home/jenkins
 
 # Define default command for the container
